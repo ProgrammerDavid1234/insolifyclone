@@ -1,0 +1,105 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Left Section: Logo + Social Icons */
+  .leftSection {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+  }
+  
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .bluePart {
+    color: #0057ff;
+    position: relative;
+  }
+  
+  .orangePart {
+    color: #ff9800;
+    position: relative;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 30px;
+      }
+  .socialIcons a:first-child{
+    /* border: 1px solid black; */
+    padding: 10px;
+    border-radius: 60%;
+    background-color: rgb(196, 196, 196);
+  }
+  .socialIcons a:nth-child(2) {
+    padding: 10px;
+    border-radius: 60%;
+    background-color: rgb(196, 196, 196);
+  }
+  
+  .socialIcons a:nth-child(3) {
+    padding: 10px;
+    border-radius: 60%;
+    background-color: rgb(196, 196, 196);
+  }
+  
+  .socialIcons a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #666;
+    transition: color 0.3s;
+  }
+  
+  .socialIcons a:hover {
+    color: #0057ff;
+  }
+  
+  /* Center Section: Navigation Links */
+  .centerSection {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .centerSection a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .centerSection a:hover {
+    color: #0057ff;
+  }
+  
+  /* Right Section: Status Button */
+  .rightSection {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .statusButton {
+    background: #e0efff;
+    border: none;
+    color: #0057ff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .statusButton:hover {
+    background: #b3d8ff;
+  }
+  

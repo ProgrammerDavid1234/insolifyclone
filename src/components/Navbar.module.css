@@ -1,0 +1,81 @@
+/* Default light mode styles */
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles for the entire page */
+.darkMode {
+  background-color: #333;
+  color: white;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; /* Default to light mode */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkMode .navbar {
+  background-color: #333; /* Dark navbar background */
+}
+
+.themeToggleBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: inherit;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.bluePart {
+  color: #0066cc;
+}
+
+.orangePart {
+  color: #ff6600;
+}
+
+.links a {
+  margin: 0 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.languageBtn {
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.searchIcon {
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .navbar{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white; /* Default to light mode */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .actions{
+    gap: 30px;
+  }
+}

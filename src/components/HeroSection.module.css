@@ -1,0 +1,17 @@
+.hero {
+    text-align: left;
+    padding: 40px;
+    max-width: 600px;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .hero p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+  }
+  
