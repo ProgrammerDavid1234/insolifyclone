@@ -1,155 +1,61 @@
-/* Default container and section styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  gap: 40px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif;
+  color: #f5f5f5;
+  background-color: #1a1a1a;
 }
 
 .section {
-  gap: 70px;
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .sectionTitle {
-  font-size: 22px;
-  text-wrap: nowrap;
-  font-weight: bold;
-  max-width: 250px; /* Keeps the title from stretching */
-  text-align: left;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 .featureGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
 .featureCard {
   display: flex;
   align-items: center;
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 15px;
+  padding: 16px;
+  background: #333;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  animation: floatEffect 3s ease-in-out infinite;
+}
+
+.featureCard:hover {
+  transform: scale(1.05);
+  animation: none; /* Stops movement on hover */
 }
 
 .icon {
-  font-size: 30px;
+  font-size: 24px;
   margin-right: 10px;
 }
-.hidedesktop{
-  display: none;
-}
-.featureText {
-  flex: 1;
-}
 
-.featureText h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.featureText p {
-  font-size: 14px;
-  color: #666;
-}
-
-.top {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-/* Mobile Version Styles */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px; /* Reduce padding for mobile */
-    gap: 20px; /* Reduce gap for mobile */
-    align-items: center; /* Center everything on mobile */
-   
+/* Floating Animation */
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0);
   }
-  .general{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 200px;
+  50% {
+    transform: translateY(-8px);
   }
-
-  .section {
-    flex-direction: column;
-    gap: 40px; /* Space out sections vertically */
-    width: 100%; /* Full width for sections */
-    align-items: center; /* Center the sections */
-  }
-
-  .sectionTitle {
-    font-size: 20px; /* Slightly reduce font size */
-    text-align: center; /* Center align title for mobile */
-  }
-.hidedesktop{
-  display: contents;
-}
-.top p{
-  display: none;
-}
-.featureGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
-  gap: 20px; /* Adds spacing between the grid items */
-  width: 100%; /* Full width for the grid */
-}
-
-.featureCard {
-  display: flex;
-  flex-direction: column; /* Stack content vertically within the card */
-  align-items: flex-start; /* Align items to the start for vertical layout */
-  padding: 35px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-  .icon {
-    font-size: 40px; /* Make icons a bit larger for mobile */
-    margin-bottom: 10px; /* Add space below icon */
-  }
-
-  .featureText h3 {
-    font-size: 16px; /* Reduce heading font size */
-    text-wrap: nowrap;
-  }
-
-  .featureText p {
-    font-size: 12px; /* Reduce paragraph font size */
-    
-  }
-
-  /* Adjust specific positioning for Safi and Siute */
-  .safi, .siute {
-    width: 100%; /* Ensure they take full width */
-    text-align: center; /* Center-align the text for both sections */
-    font-size: 18px; /* Adjust font size */
-    font-weight: bold;
-    margin-bottom: 20px; /* Add spacing between the sections */
-  }
-  .hidemobile{
-    display: none;
-  }
-
-  /* Specific styles for Safi and Siute - stack them on top of the boxes */
-  .safi {
-    order: -1; /* Move Safi to the top of the grid */
-  }
-
-  .siute {
-    order: -1; /* Move Siute below Safi but still on top of the boxes */
+  100% {
+    transform: translateY(0);
   }
 }

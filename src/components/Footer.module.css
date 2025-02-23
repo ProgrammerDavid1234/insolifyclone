@@ -1,105 +1,121 @@
+/* General Footer Styling */
 .footer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #121417;
+  border-top: 1px solid #1e1e22;
+  font-family: "Inter", sans-serif;
+  color: #e5e5e5;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Left Section: Logo + Social Icons */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.bluePart {
+  color: #38bdf8;
+}
+
+.orangePart {
+  color: #f97316;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcons a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #9ca3af;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.1);
+  background: #1e293b;
+  color: #38bdf8;
+}
+
+/* Center Section: Navigation Links */
+.centerSection {
+  display: flex;
+  gap: 20px;
+}
+
+.centerSection a {
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.centerSection a:hover {
+  color: #38bdf8;
+}
+
+/* Right Section: Status Button */
+.rightSection {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.statusButton {
+  background: rgba(56, 189, 248, 0.15);
+  border: none;
+  color: #38bdf8;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.statusButton:hover {
+  background: rgba(56, 189, 248, 0.3);
+  transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background: #fff;
-    border-top: 1px solid #ddd;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    gap: 15px;
   }
-  
-  /* Left Section: Logo + Social Icons */
-  .leftSection {
-    display: flex;
-    align-items: center;
-    gap: 55px;
-  }
-  
-  .logo {
-    font-size: 22px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-  }
-  
-  .bluePart {
-    color: #0057ff;
-    position: relative;
-  }
-  
-  .orangePart {
-    color: #ff9800;
-    position: relative;
-  }
-  
-  .socialIcons {
-    display: flex;
-    gap: 30px;
-      }
-  .socialIcons a:first-child{
-    /* border: 1px solid black; */
-    padding: 10px;
-    border-radius: 60%;
-    background-color: rgb(196, 196, 196);
-  }
-  .socialIcons a:nth-child(2) {
-    padding: 10px;
-    border-radius: 60%;
-    background-color: rgb(196, 196, 196);
-  }
-  
-  .socialIcons a:nth-child(3) {
-    padding: 10px;
-    border-radius: 60%;
-    background-color: rgb(196, 196, 196);
-  }
-  
-  .socialIcons a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #666;
-    transition: color 0.3s;
-  }
-  
-  .socialIcons a:hover {
-    color: #0057ff;
-  }
-  
-  /* Center Section: Navigation Links */
-  .centerSection {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .centerSection a {
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-    transition: color 0.3s;
-  }
-  
-  .centerSection a:hover {
-    color: #0057ff;
-  }
-  
-  /* Right Section: Status Button */
+
+  .leftSection,
+  .centerSection,
   .rightSection {
-    display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
-  
-  .statusButton {
-    background: #e0efff;
-    border: none;
-    color: #0057ff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.3s;
+
+  .socialIcons {
+    gap: 10px;
   }
-  
-  .statusButton:hover {
-    background: #b3d8ff;
+
+  .centerSection {
+    flex-direction: column;
+    gap: 10px;
   }
-  
+}

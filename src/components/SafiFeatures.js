@@ -1,76 +1,38 @@
 import React from "react";
 import styles from "./SafiFeatures.module.css";
 
-const intelligenceFeatures = [
+const features = [
   {
-    title: "Intelligence",
-    description:
-      "Business intelligence capabilities including Support, Sales, Project management and more.",
-    icon: "📊",
+    category: "Intelligence",
+    items: [
+      { title: "AI Assistance", description: "Automate customer support, research, meetings, and more.", icon: "🤖" },
+      { title: "Fraud Detection", description: "Detect and prevent suspicious activities using AI.", icon: "🔍" },
+      { title: "Deep Analytics", description: "Gain valuable business insights and sales forecasts.", icon: "📈" },
+      { title: "Multilingual", description: "Supports English, Hausa, French, Yoruba, Igbo, and more.", icon: "🌍" },
+    ]
   },
   {
-    title: "Fraud Detection",
-    description:
-      "Smart Suspicious activity Detection, Prevention, Learning and Protection.",
-    icon: "🔓",
-  },
-  {
-    title: "Analysis",
-    description:
-      "Deep, valuable and meaningful Business insights, Sales forecast to boost business growth.",
-    icon: "📈",
-  },
-  {
-    title: "Multilingual",
-    description:
-      "English, Hausa, French, Yoruba, Igbo, Pidgin and many more languages fully supported.",
-    icon: "🌍",
-  },
-];
-
-const businessFeatures = [
-  {
-    title: "Banking",
-    description:
-      "All in one banking platform for Bank of any scale. Integrates with processors, applications and more.",
-    icon: "🏦",
-  },
-  {
-    title: "Messaging",
-    description:
-      "Inbox, file sharing, groups and collaboration for teams of any scale.",
-    icon: "💬",
-  },
-  {
-    title: "Projects management",
-    description:
-      "Workflows, tasks, and Projects management, kanban and time tracking.",
-    icon: "📋",
-  },
-  {
-    title: "Human Resource",
-    description:
-      "Manage Recruitment, Payroll, Attendance, Checkin, Leave, Holidays and more.",
-    icon: "📝",
-  },
+    category: "Business Suite",
+    items: [
+      { title: "Banking", description: "A complete banking platform for institutions of any scale.", icon: "🏦" },
+      { title: "Messaging", description: "Team collaboration through inbox, file sharing, and groups.", icon: "💬" },
+      { title: "Project Management", description: "Kanban boards, time tracking, and workflow automation.", icon: "📋" },
+      { title: "HR Management", description: "Manage payroll, recruitment, and attendance effortlessly.", icon: "📝" },
+    ]
+  }
 ];
 
 const SafiFeatures = () => {
   return (
-    <div className={styles.general}>
-      <div className={styles.container}>
-        {/* Safi Section */}
-        <div className={`${styles.section} ${styles.safi}`}>
-          <div className={styles.top}>
-            <h2 className={styles.sectionTitle}>Safi</h2>
-            <p>An Artificial Intelligence agent and assistance platform for businesses. Automates customer support, research, meetings, projects and much more.</p>
-            <p style={{ textDecoration: 'underline', color: 'blue', cursor: 'pointer' }}>View here</p>
-          </div>
+    <div className={styles.container}>
+      {features.map((section, index) => (
+        <div key={index} className={styles.section}>
+          <h2 className={styles.sectionTitle}>{section.category}</h2>
           <div className={styles.featureGrid}>
-            {intelligenceFeatures.map((feature, index) => (
-              <div key={index} className={styles.featureCard}>
+            {section.items.map((feature, idx) => (
+              <div key={idx} className={styles.featureCard}>
                 <span className={styles.icon}>{feature.icon}</span>
-                <div className={styles.featureText}>
+                <div>
                   <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </div>
@@ -78,53 +40,7 @@ const SafiFeatures = () => {
             ))}
           </div>
         </div>
-
-        {/* Suite Section */}
-        <div className={styles.hidemobile}>
-          <div className={`${styles.section} ${styles.siute}`}>
-            <div className={styles.featureGrid}>
-              {businessFeatures.map((feature, index) => (
-                <div key={index} className={styles.featureCard}>
-                  <span className={styles.icon}>{feature.icon}</span>
-                  <div className={styles.featureText}>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className={styles.top}>
-              <h2 className={styles.sectionTitle}>Suite</h2>
-              <p>Business management suite for businesses of any scale. Useful for internal communication, business automation and more.</p>
-              <p style={{ textDecoration: 'underline', color: 'blue', cursor: 'pointer' }}>Explore Suite</p>
-            </div>
-          </div>
-        </div>
-        <div className={styles.hidedesktop}>
-
-          <div className={styles.section}>
-            <div className={styles.top}>
-              <h2 className={styles.sectionTitle}>Suite</h2>
-              <p>Business management suite for businesses of any scale. Useful for internal communication, business automation and more.</p>
-              <p style={{ textDecoration: 'underline', color: 'blue', cursor: 'pointer' }}>Explore Suite</p>
-            </div>
-
-            {/* Move the featureGrid below this */}
-            <div className={styles.featureGrid}>
-              {businessFeatures.map((feature, index) => (
-                <div key={index} className={styles.featureCard}>
-                  <span className={styles.icon}>{feature.icon}</span>
-                  <div className={styles.featureText}>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-      </div>
+      ))}
     </div>
   );
 };
